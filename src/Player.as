@@ -19,9 +19,8 @@ package
 		
 		public function Player() 
 		{
-			
-			
 			this.addEventListener(Event.ADDED_TO_STAGE, init);
+			//set position and scale of player
 			this.x = 150;
 			this.y = 460;
 			this.scaleX = 0.2;
@@ -36,11 +35,14 @@ package
 		
 		private function onKeyDown(e:KeyboardEvent):void 
 		{
+			//set jump function onkeydown spacebar
+			
+			
 			if (e.keyCode == Keyboard.SPACE)
 			{
 				//Player pressed Spacebar
 			 
-				if(jumping != true)
+				if(!jumping)
 				{
 					sound.play();
 					jumpPow = -60;
@@ -51,6 +53,7 @@ package
 		}
 		private function update(evt:Event):void
 		{
+			//set rotation  while jumping and jumping power + gravity
 			if(jumping)
 				{
 					this.rotation += 22.5;
