@@ -160,12 +160,12 @@ package
 			var aO:int = aObstacle.length;
 			for (var i:int = 0; i < aO; i++) 
 			{
-				addChild(aObstacle[i])
+				addChild(aObstacle[i]);
 				aObstacle[i].Add();
 				spawnRate = Math.random() * 2000;
 				
 				
-				if (aObstacle[i].x < 100)
+				if (aObstacle[i].x < -100)
 				{
 					removeChild(aObstacle[i]);
 				}
