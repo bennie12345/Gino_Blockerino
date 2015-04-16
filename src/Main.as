@@ -31,6 +31,7 @@ package
 		private var endScreen:MovieClip;
 		private var isEndScreen:Boolean = false;
 		private var format:TextFormat;
+		private var victoryPickup:Trophy = new Trophy();
 		
 		
 		
@@ -43,7 +44,7 @@ package
 			playSound();
 			
 			//push Obstacle to array
-			for (var i:int = 0; i < 1; i++)
+			for (var i:int = 0; i < 3; i++)
 			{
 				aObstacle.push(new Obstacle());
 			}
@@ -85,7 +86,7 @@ package
 		}
 		
 		//add to score
-		private function addMeters():void 
+		private function addMeters():void
 		{
 			scoreInt += 1;
 		}
@@ -111,7 +112,11 @@ package
 			{
 				s2.x = s1.x+s1.width;
 			}
-			
+			if (scoreInt >= 100)
+			{
+				addChild(victoryPickup);
+				victoryPickup.x -= scrollSpeed * 2;
+			}
 			
 			//check if player hits Obstacle and if so roll endscreen
 			var aO:int = aObstacle.length;
