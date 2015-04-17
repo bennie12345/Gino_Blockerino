@@ -55,21 +55,19 @@ package
 		{
 			//set rotation  while jumping and jumping power + gravity
 			if(jumping)
-				{
-					this.rotation += 22.5;
-					this.y += jumpPow;
-					jumpPow += grav;
-					
+			{
+				this.rotation += 22.5;
+				this.y += jumpPow;
+				jumpPow += grav;
+				
 
-					if(this.y >= 460)
-					{
-						jumping = false;
-						this.y = 460;
-					}
+				if(this.y >= 460)
+				{
+					jumping = false;
+					this.y = 460;
 				}
-			
+			}
 		}
-		
 	}
 
 }
